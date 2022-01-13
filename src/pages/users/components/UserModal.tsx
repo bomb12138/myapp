@@ -7,10 +7,17 @@
  * @FilePath: \umiapp\src\pages\users\components\UserModal.tsx
  */
 import { Modal, Button } from 'antd';
-export default (props) => {
+export default (props: any) => {
   return (
     <div>
-      <Modal title="Basic Modal" visible={props.visible}></Modal>
+      <Modal
+        title="Basic Modal"
+        visible={props.visible}
+        onOk={props.closeHandler}
+        onCancel={props.closeHandler}
+      >
+        {JSON.stringify(props.record)}
+      </Modal>
     </div>
-  )
-}
+  );
+};
